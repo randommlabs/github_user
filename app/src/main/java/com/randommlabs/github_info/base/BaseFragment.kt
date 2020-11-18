@@ -9,13 +9,13 @@ import dagger.android.DaggerFragment
  * Created by aditya on 17/11/20.
  */
 
-abstract class BaseFragment<T : ViewModel?> : DaggerFragment() {
+abstract class BaseFragment<T : ViewModel?> : dagger.android.support.DaggerFragment() {
     private var viewModel: T? = null
 
     abstract fun getViewModel(): T
 
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         viewModel = getViewModel()
     }

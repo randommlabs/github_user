@@ -206,6 +206,21 @@
             app:layout_constraintLeft_toLeftOf="@id/tv_bio"/>
 
         <TextView
+            android:id="@+id/tv_view_repos"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:text="View Repos"
+            android:layout_marginStart="35dp"
+            android:visibility="@{GithubSearchViewModel.public_repos==null||GithubSearchViewModel.public_repos.equals(`0`)?View.GONE : View.VISIBLE}"
+            android:layout_marginTop="15dp"
+            android:onClick="@{(v) -> GithubSearchViewModel.onClick(v)}"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_bio"
+            app:layout_constraintLeft_toRightOf="@id/tv_public_repos_data"/>
+
+        <TextView
             android:id="@+id/tv_public_repos_data"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -289,6 +304,6 @@
             android:layout_marginStart="20dp"
             app:layout_constraintLeft_toRightOf="@id/tv_following"/>
 
-
+     <FrameLayout android:id="@+id/container" android:layout_height="match_parent" android:layout_width="match_parent" android:elevation="5dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

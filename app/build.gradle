@@ -40,7 +40,7 @@ android {
 
 dependencies {
     def lifecycle_version = "2.2.0"
-    def daggerVersion = '2.14.1'
+    def daggerVersion = '2.21'
 
     //lifecycle
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -77,4 +77,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
 }
