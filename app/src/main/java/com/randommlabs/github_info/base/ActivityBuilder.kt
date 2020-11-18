@@ -13,9 +13,7 @@ import dagger.android.ContributesAndroidInjector
  */
 
 @Module
-abstract class ActivityBuilder {
+open abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [GithubSearchViewModule::class])
     abstract fun contributeGithubSearchView(): GithubSearchView?
-//    @ContributesAndroidInjector(modules = [MainActivityModule::class, CategoryFragmentProvider::class, ProfileFragmentProvider::class, LeaderboardFragmentProvider::class])
-//    abstract fun contributeMainActivity(): MainActivity?
 }

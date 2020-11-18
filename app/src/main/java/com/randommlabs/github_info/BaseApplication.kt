@@ -10,6 +10,7 @@ import dagger.android.support.DaggerApplication
 
 open class BaseApplication:DaggerApplication(){
 
+
     companion object {
         private var instance: BaseApplication? = null
         fun getInstance(): BaseApplication? {
@@ -23,8 +24,9 @@ open class BaseApplication:DaggerApplication(){
     }
 
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication?> {
-        return DaggerBaseApplicationComponent.builder().create(this);
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication?>? {
+        val application :AndroidInjector<out DaggerApplication?>? = DaggerBaseApplicationComponent.builder().create(this);
+        return application
     }
 
 }

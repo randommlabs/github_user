@@ -14,20 +14,15 @@ import dagger.android.support.AndroidSupportInjectionModule;
  * Created by aditya on 17/11/20.
  */
 
-@Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
         BaseApplicationModule::class,
-        ContextModule::class,
-        GithubApiServiceModule::class,
         ActivityBuilder::class
     ]
 )
-@ApplicationScope
 
 interface BaseApplicationComponent : AndroidInjector<BaseApplication> {
     @Component.Builder
     abstract class Builder : AndroidInjector.Builder<BaseApplication?>()
-
 }

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
  * Created by aditya on 17/11/20.
  */
 
-@Module(includes = [ContextModule::class])
+@Module
 class NetworkModule {
     @Provides
     fun okHttpClient(

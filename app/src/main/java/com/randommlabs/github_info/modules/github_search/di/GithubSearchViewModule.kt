@@ -1,12 +1,10 @@
 package com.randommlabs.github_info.modules.github_search.di
 
 import com.randommlabs.github_info.base.networks.GithubApiService
-import com.randommlabs.github_info.base.scope.PerActivity
 import com.randommlabs.github_info.modules.github_search.GithubSearchViewModel
 import dagger.Module
 import dagger.Provides
-
-
+import javax.inject.Singleton
 
 
 /**
@@ -15,9 +13,16 @@ import dagger.Provides
 
 @Module
 class GithubSearchViewModule {
-    @PerActivity
+
     @Provides
-    fun provideGithubSearchViewModel(githubApiService : GithubApiService): GithubSearchViewModel? {
+    fun provideGithubSearchViewModel(githubApiService: GithubApiService): GithubSearchViewModel {
         return GithubSearchViewModel(githubApiService)
     }
+
+//    @PerActivity
+//    @Provides
+//    fun provideViewModelProvider(viewModel: GithubSearchViewModel): ViewModelProvider.Factory? {
+//        return ViewModelProviderFactory(viewModel)
+//    }
 }
+

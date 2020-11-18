@@ -14,7 +14,7 @@ abstract class BaseActivity<T : ViewModel?> : DaggerAppCompatActivity() {
     private var viewModel: T? = null
 
 
-    abstract fun getViewModel(): T
+    abstract fun getViewModel(): T?
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

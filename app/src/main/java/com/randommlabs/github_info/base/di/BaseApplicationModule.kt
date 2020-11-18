@@ -12,15 +12,15 @@ import javax.inject.Singleton
  * Created by aditya on 17/11/20.
  */
 
-@Module
+@Module(includes = [GithubApiServiceModule::class])
 class BaseApplicationModule {
-    @Singleton
+
     @Provides
     fun provideContext(application: BaseApplication?): Context? {
         return application
     }
 
-    @Singleton
+
     @Provides
     fun provideUtils(context: Context?): Utils? {
         return Utils(context)

@@ -1,9 +1,10 @@
 package com.randommlabs.github_info.base.networks
 
+import com.randommlabs.github_info.modules.github_search.models.UserDetails
 import io.reactivex.Observable
 import retrofit2.http.GET
-import retrofit2.http.HeaderMap
-import retrofit2.http.Query
+import retrofit2.http.Path
+import retrofit2.http.Url
 
 
 /**
@@ -11,6 +12,7 @@ import retrofit2.http.Query
  */
 
 interface GithubApiService {
-    @GET("sample")
-    fun getData(@Query("sample") Sample: Int, @HeaderMap headersMap: Map<String?, String?>?): Observable<String?>?
+
+    @GET("users/{user_id}")
+    fun getData(@Path(value = "user_id", encoded = true) userId: String?): Observable<UserDetails>
 }

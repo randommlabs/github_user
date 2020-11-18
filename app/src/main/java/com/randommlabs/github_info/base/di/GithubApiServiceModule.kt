@@ -17,9 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module(includes = [NetworkModule::class])
 class GithubApiServiceModule {
     @Provides
-    @ApplicationScope
     fun githubApiService(httpClient: OkHttpClient?): GithubApiService {
-        val url: String = ""
+        val url = "https://api.github.com/"
         val retrofit = Retrofit.Builder()
             .baseUrl(url)
             .client(httpClient)
